@@ -6,6 +6,15 @@
     "license": "MIT",
     "private": true,
     "scripts": {
-        "cleanup": "./cleanup.sh"
+      "cleanup": "./cleanup.sh",
+      "build:doppelmutzi": "lerna run --scope=@zzc/* build",
+      "build:zzcVue3": "lerna run --scope=@zzc/zzc-vue3 build --include-filtered-dependencies",
+      "build:all": "lerna exec yarn build"
+    },
+    "workspaces": [
+        "projects/*"
+    ],
+    "devDependencies": {
+        "lerna": "^6.0.1"
     }
 }
